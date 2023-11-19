@@ -1,0 +1,8 @@
+.boton{
+    background-color: blueviolet;
+    color: aquamarine;
+    padding: 10px, 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.8px;
+}

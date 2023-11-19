@@ -1,0 +1,24 @@
+.contenidoMiLista {
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+.item{
+    background-color: aquamarine;
+    width: 25rem;
+}
+.vista{
+    background-color: bisque;
+    padding: 15px;
+    border-radius: 5px;
+    color: red
+}
+
+.pendiente{
+    color: blueviolet;
+}
