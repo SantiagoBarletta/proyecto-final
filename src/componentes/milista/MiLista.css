@@ -17,6 +17,7 @@
     flex-wrap: wrap;
 }
 .vista{
+    text-transform: uppercase;
     background-color: bisque;
     flex-wrap: wrap;
     width: 100%;
@@ -26,10 +27,22 @@
 }
 
 .pendiente{
+    text-transform: uppercase;
     background-color:greenyellow;
     width: 100%;
     flex-wrap: wrap;
     padding: 15px;
     border-radius: 10px;
     color: blueviolet;
+}
+
+.sinopsis{
+    width: 100%;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+
+.sinopsis-no{
+    visibility: collapse;
+    ;
 }

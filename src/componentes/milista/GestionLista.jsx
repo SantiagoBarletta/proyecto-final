@@ -37,11 +37,12 @@ const eliminarItem = (id) =>{
 };
 
 //Agregar una nueva pocion a la lista
-const agregarItem = (nombre) =>{
+const agregarItem = ({ nombre, sinopsis }) => {
     const nuevoItem ={
         id: Date.now(), //generar ID unico
         nombre,
-        vista: false,
+        sinopsis, 
+        vista: false
     };
     setItems([...items, nuevoItem])
 };

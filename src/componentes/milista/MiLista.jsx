@@ -2,7 +2,7 @@ import Item from "./Item";
 
 
 
-const MiLista = ({ items, vistoItem, eliminarItem }) =>{
+const MiLista = ({ items, vistoItem, eliminarItem, verSinopsis }) => {
     return(
         <div className="contenidoMiLista">
             {items.map((item) =>(
@@ -11,6 +11,7 @@ const MiLista = ({ items, vistoItem, eliminarItem }) =>{
                     item={item}
                     vistoItem={vistoItem}
                     eliminarItem={eliminarItem}
+                    verSinopsis={verSinopsis}
                 />
 
             ) )}
