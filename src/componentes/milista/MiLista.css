@@ -5,20 +5,31 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 50px;
+    gap: 10px;
   }
 
 .item{
-    background-color: aquamarine;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     width: 25rem;
+    display:flex;
+    gap :10px;
+    flex-wrap: wrap;
 }
 .vista{
     background-color: bisque;
+    flex-wrap: wrap;
+    width: 100%;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     color: red
 }
 
 .pendiente{
+    background-color:greenyellow;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 15px;
+    border-radius: 10px;
     color: blueviolet;
 }
