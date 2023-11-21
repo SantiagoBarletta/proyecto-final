@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   padding: 10px 0px 10px 0px;
-  background-color: #04273c;
+  background-color: #000;
   text-align: center;
   color: #fff;
 }
@@ -13,4 +13,7 @@
 footer a {
   color: #fff;
   text-decoration: none;
+}
+.logomenu{
+  width: 150px;
 }

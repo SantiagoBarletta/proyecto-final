@@ -6,10 +6,7 @@ function Seccion() {
     <section className="seccion">
       <h2>Informacion:</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
-        placeat, eos nisi minima dicta at asperiores harum reiciendis aliquam,
-        cum voluptatem consequatur quia deleniti in modi odit veniam inventore
-        sunt.
+        Lorem,
       </p>
       <img src={galletitas}></img>
     </section>

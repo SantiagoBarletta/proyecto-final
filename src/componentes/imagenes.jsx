@@ -5,6 +5,12 @@ import livingdead from '../assets/img/trotld.jpg';
 import jaws from '../assets/img/jaws.jpg';
 import pesadilla from '../assets/img/pesadilla.jpg';
 
+import viernes13slider from '../assets/img/viernes13slider.png';
+import halloweenslider from '../assets/img/halloweenslider.png';
+import returnslider from '../assets/img/returnslider.png';
+
+import logo from '../assets/img/logo1.jpg'
+
 
 const imagenes = {
     viernes13,
@@ -12,7 +18,11 @@ const imagenes = {
     it,
     livingdead,
     jaws,
-    pesadilla
+    pesadilla,
+    viernes13slider,
+    halloweenslider,
+    returnslider,
+    logo
 }
 
 

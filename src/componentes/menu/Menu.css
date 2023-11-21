@@ -12,3 +12,6 @@
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
 }
+.logomenu{
+  width: 150px;
+}

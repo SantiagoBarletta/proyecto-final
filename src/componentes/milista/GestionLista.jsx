@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import FormularioMiLista from "./FormularioMiLista"
 import MiLista from "./MiLista";
+import './Milista.css'
 
 const GestionLista = () =>{
 // Estado para almacenar las pociones
@@ -57,7 +58,7 @@ const agregarItem = ({ nombre, sinopsis }) => {
 
     return(
         <div>
-            <h1> Gestión de peliculas a ver </h1>
+            <h2> Mi Lista </h2>
             <FormularioMiLista agregarItem={agregarItem} />
             
             <MiLista
