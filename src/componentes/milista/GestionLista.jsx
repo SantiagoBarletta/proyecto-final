@@ -26,7 +26,14 @@ const vistoItem = (id) =>{
     item.id === id ? { ...item, vista: !item.vista }:item
     )
     setItems(nuevosItems);
+}
 
+//Mostrar ocultar sinopsis
+const verSinopsis = (id) =>{
+    const nuevosItems = items.map((item) =>
+    item.id === id ? { ...item, mostrar: !item.mostrar }:item
+    )
+    setItems(nuevosItems);
 }
 
 
@@ -42,7 +49,8 @@ const agregarItem = ({ nombre, sinopsis }) => {
         id: Date.now(), //generar ID unico
         nombre,
         sinopsis, 
-        vista: false
+        vista: false,
+        ver: false
     };
     setItems([...items, nuevoItem])
 };
@@ -56,6 +64,7 @@ const agregarItem = ({ nombre, sinopsis }) => {
             items={items}
             vistoItem={vistoItem}
             eliminarItem={eliminarItem}
+            verSinopsis={verSinopsis}
             />
         
         </div>
