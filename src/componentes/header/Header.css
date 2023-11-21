@@ -24,3 +24,8 @@
 .imagenIndex img {
   width: 100%;
 }
+.carrusel{
+  text-align: left !important;
+  right: 40% !important;
+  left: 10% !important
+}

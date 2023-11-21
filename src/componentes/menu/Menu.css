@@ -15,3 +15,6 @@
 .logomenu{
   width: 150px;
 }
+.navbar-toggler-icon{ 
+    background-color: white !important;
+}
