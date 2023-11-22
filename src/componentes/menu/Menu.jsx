@@ -25,6 +25,9 @@ const Menu = () => {
           <Link to="/milista" className="linkMenu text-white">
             Mi lista
           </Link>
+          <Link to="/personajes" className="linkMenu text-white">
+            Personajes
+          </Link>
 
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
