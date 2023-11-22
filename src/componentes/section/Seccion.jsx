@@ -1,14 +1,10 @@
 import "./Seccion.css";
-import galletitas from "../../assets/img/galletitas.jpg";
+import ListaPersonajes from "../sliderpeliculas/SliderPeliculas";
 
 function Seccion() {
   return (
     <section className="seccion">
-      <h2>Informacion:</h2>
-      <p>
-        Lorem,
-      </p>
-      <img src={galletitas}></img>
+    <ListaPersonajes/>
     </section>
   );
 }

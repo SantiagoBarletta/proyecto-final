@@ -1,13 +1,12 @@
-// ListaPersonajes.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './personajes.css';
+import './SliderPeliculas.css';
 
-function ListaPersonajes() {
-  const [personajes, setPersonajes] = useState([]);
+function SliderPelicula() {
+  const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,7 +30,7 @@ function ListaPersonajes() {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        setPersonajes(data.results);
+        setPeliculas(data.results);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -46,7 +45,7 @@ function ListaPersonajes() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
+    slidesToShow: 4, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
     slidesToScroll: 1,
   };
 
@@ -59,26 +58,26 @@ function ListaPersonajes() {
 
   return (
     <div>
-      <h2>Lista de Películas de Terror</h2>
       {loading ? (
         <p>Cargando Películas...</p>
       ) : (
+        <><h2>Cine de terror</h2>
         <Slider {...settings}>
-          {personajes.map((personaje) => (
-            <div key={personaje.id} className="personaje-item">
-              <h3>{personaje.original_title}</h3>
-              <p>Resumen: {truncateText(personaje.overview, 200)}</p>
-              <p>Popularidad: {personaje.popularity}</p>
+          {peliculas.map((pelicula) => (
+              <div key={pelicula.id} className="pelicula-item">
+               <h3>{pelicula.original_title}</h3>
+              <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
+              <p>Puntaje IMDB: {pelicula.vote_average}</p>
               <div className="contenedor_imagen">
-                <img src={`https://image.tmdb.org/t/p/w500/${personaje.poster_path}`} alt={personaje.original_title} />
+                <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt={pelicula.original_title} />
               </div>
-              <Link to={`/DetallePersonaje/${personaje.id}`}>Ver Detalle</Link>
+              <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>Ver Detalle</Link>
             </div>
           ))}
-        </Slider>
+        </Slider></>
       )}
     </div>
   );
 }
 
-export default ListaPersonajes;
+export default SliderPelicula;
