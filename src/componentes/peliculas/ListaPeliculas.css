@@ -1,46 +1,16 @@
-.pelicula {
-    display: inline-block;
-    width: 32%;
-    height: 100%;
-    border-radius: 0.5rem;
-    border-left: 10px solid #04273c;
-    box-shadow: 3px 10px 10px #999;
-    margin: 0.2rem;
-  }
   .contenidoPeliculas {
-    border: 1px solid #ccc;
     margin-bottom: 50px;
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 5px;
   }
-  .tituloPelicula {
-    background-color: #04273c;
-    color: #fff;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 0 1rem 0 0;
-  }
-  .datosPelicula {
-    display: inline;
-  }
-  .poster {
-    width: 40%;
-    padding: 1rem;
-    float: left;
-  }
-  
-  .sinopsis {
-    display: inline;
-    float: right;
-    width: 60%;
-    padding: 1rem;
-    font-size: 12px;
-  }
 
   .card-footer{
     background-color:#fff !important;
+  }
+
+  .card{
+    padding: 2px;
+    width: 23% !important;
   }

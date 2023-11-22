@@ -6,7 +6,7 @@ import './ListaPeliculas.css';
 function ListaPeliculas() {
     return (
       <>
-      <h2>Top 6 de películas</h2>
+      <h2>Recomendados</h2>
       <section className="contenidoPeliculas">
         {peliculas.map((pelicula, index) => (
           <Pelicula

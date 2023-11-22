@@ -20,7 +20,7 @@ const Menu = () => {
             Inico
           </Link>
           <Link to="/peliculas" className="linkMenu text-white">
-            Peliculas
+            Recomendados
           </Link>
           <Link to="/milista" className="linkMenu text-white">
             Mi lista
