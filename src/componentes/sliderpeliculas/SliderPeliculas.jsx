@@ -50,7 +50,7 @@ function SliderPeliculas() {
     infinite: true,
     speed: 500,
     slidesToShow: 5, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
-    slidesToScroll: 1,
+    slidesToScroll: 5,
   };
 
   const truncateText = (text, maxLength) => {
@@ -71,19 +71,16 @@ function SliderPeliculas() {
             {peliculas.map((pelicula) => (
               <div key={pelicula.id} className="pelicula-item">
                 <div className="contenedor_imagen">
-                  <img
+                  <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>
+                    <img
                     src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
                     alt={pelicula.original_title}
-                  />
+                  /></Link>
                 </div>
                 <div className="detalleslider">
                   <h3>{pelicula.original_title}</h3>
                   <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
                   <p>Puntaje IMDB: {pelicula.vote_average}</p>
-
-                  <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>
-                    Ver Detalle
-                  </Link>
                 </div>
               </div>
             ))}

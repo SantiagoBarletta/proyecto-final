@@ -5,7 +5,7 @@
 }
 
 .contenedor_imagen img{
-    margin: 2px;
+    padding: 2px;
     width: 100%;
     border-radius: 10px;
 }
