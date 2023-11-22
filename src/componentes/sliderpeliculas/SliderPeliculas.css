@@ -23,3 +23,27 @@
 .detalleslider h3{
     font-weight: 600;
 }
+
+.contenedor-detalles{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    color: aliceblue;
+}
+
+.poster {
+    max-width: 50%;
+}
+
+.datos {
+    max-width: 50%;
+    text-align: left;
+}
+
+.titulo{
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 20px;
+}

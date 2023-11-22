@@ -8,7 +8,7 @@ function DetallePeliculaSlider() {
   const [pelicula, setPelicula] = useState({});
 
   useEffect(() => {
-    const API_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=dd00aa6b89a4eaf22b5fbf601827b192`;
+    const API_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=dd00aa6b89a4eaf22b5fbf601827b192&language=es-ES`;
 
     const fetchData = async () => {
       try {
@@ -30,13 +30,18 @@ function DetallePeliculaSlider() {
       {loading ? (
         <p>Cargando Detalle de la Película...</p>
       ) : (
-        <div>
-          <h2>Detalle de la Película</h2>
-          <h3>{pelicula.original_title}</h3>
-          <p>Resumen: {pelicula.overview}</p>
-          <p>Popularidad: {pelicula.popularity}</p>
-          <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt={pelicula.original_title} />
-        </div>
+        <><div className="titulo"> <p>{pelicula.original_title}</p></div>
+          <div className="contenedor-detalles">
+            
+            <div class="poster">
+              <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt={pelicula.original_title} />
+            </div>
+
+            <div className="datos">
+              <h4>Sinopsis:</h4><p> {pelicula.overview}</p>
+              <p>Puntaje: {pelicula.vote_average}</p>
+            </div>
+          </div></>
       )}
     </div>
   );
