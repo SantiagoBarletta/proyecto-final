@@ -7,8 +7,8 @@ import ListaPeliculas from "./componentes/peliculas/ListaPeliculas";
 import Menu from "./componentes/menu/Menu";
 import GestionLista from "./componentes/milista/GestionLista";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ListaPersonajes from './componentes/sliderpeliculas/SliderPeliculas.jsx'
-import DetallePersonaje from './componentes/sliderpeliculas/DetallePeliculaSlider.jsx'
+import DetallePeliculaSlider from "./componentes/sliderpeliculas/DetallePeliculaSlider.jsx";
+import SliderPeliculas from "./componentes/sliderpeliculas/Sliderpeliculas.jsx";
 
 function App() {
 
@@ -22,8 +22,8 @@ function App() {
           <Route path="/" element={<Seccion />} />
           <Route path="/milista" element={<GestionLista />} />
           <Route path="/peliculas" element={<ListaPeliculas />} />
-          <Route path="/personajes" element={<ListaPersonajes />} />
-          <Route path="/DetallePeliculaSlider/:id" element={<DetallePersonaje />} />
+          <Route path="/sliderpeliculas" element={<SliderPeliculas />} />
+          <Route path="/DetallePeliculaSlider/:id" element={<DetallePeliculaSlider />} />
         </Routes>
         </main>
         <Footer />

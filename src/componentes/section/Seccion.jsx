@@ -1,11 +1,12 @@
+import SliderPeliculas from "../sliderpeliculas/Sliderpeliculas";
 import "./Seccion.css";
-import ListaPersonajes from "../sliderpeliculas/SliderPeliculas";
+
 
 function Seccion() {
   return (
     <section className="seccion">
-    <ListaPersonajes/>
-    </section>
+    <SliderPeliculas/>
+        </section>
   );
 }
 

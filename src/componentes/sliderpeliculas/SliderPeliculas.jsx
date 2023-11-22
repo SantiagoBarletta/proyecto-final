@@ -3,18 +3,22 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './SliderPeliculas.css';
+import "./SliderPeliculas.css";
 
-function SliderPelicula() {
+function SliderPeliculas() {
   const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchGenres = async () => {
-      const genresResponse = await fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=dd00aa6b89a4eaf22b5fbf601827b192");
+      const genresResponse = await fetch(
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=dd00aa6b89a4eaf22b5fbf601827b192"
+      );
       const genresData = await genresResponse.json();
 
-      const terrorGenre = genresData.genres.find(genre => genre.name === "Horror");
+      const terrorGenre = genresData.genres.find(
+        (genre) => genre.name === "Horror"
+      );
 
       if (terrorGenre) {
         fetchMovies(terrorGenre.id);
@@ -45,7 +49,7 @@ function SliderPelicula() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
+    slidesToShow: 5, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
     slidesToScroll: 1,
   };
 
@@ -61,23 +65,33 @@ function SliderPelicula() {
       {loading ? (
         <p>Cargando Películas...</p>
       ) : (
-        <><h2>Cine de terror</h2>
-        <Slider {...settings}>
-          {peliculas.map((pelicula) => (
+        <>
+          <h2 className="seccion-name">Cine de terror</h2>
+          <Slider {...settings}>
+            {peliculas.map((pelicula) => (
               <div key={pelicula.id} className="pelicula-item">
-               <h3>{pelicula.original_title}</h3>
-              <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
-              <p>Puntaje IMDB: {pelicula.vote_average}</p>
-              <div className="contenedor_imagen">
-                <img src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`} alt={pelicula.original_title} />
+                <div className="contenedor_imagen">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
+                    alt={pelicula.original_title}
+                  />
+                </div>
+                <div className="detalleslider">
+                  <h3>{pelicula.original_title}</h3>
+                  <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
+                  <p>Puntaje IMDB: {pelicula.vote_average}</p>
+
+                  <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>
+                    Ver Detalle
+                  </Link>
+                </div>
               </div>
-              <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>Ver Detalle</Link>
-            </div>
-          ))}
-        </Slider></>
+            ))}
+          </Slider>
+        </>
       )}
     </div>
   );
 }
 
-export default SliderPelicula;
+export default SliderPeliculas;
