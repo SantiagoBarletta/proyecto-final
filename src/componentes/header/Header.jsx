@@ -6,7 +6,7 @@ import './Header.css'
 
 const Header = () => {
   return (
-<Carousel>
+<Carousel className='slider'>
       <Carousel.Item>
       <img
         className="d-block w-100"

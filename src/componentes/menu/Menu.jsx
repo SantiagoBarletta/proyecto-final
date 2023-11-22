@@ -8,7 +8,7 @@ import imagenes from "../imagenes";
 
 const Menu = () => {
   return (
-    <Navbar expand="lg" className="bg-body-dark">
+    <Navbar expand="lg" className="bg-body-dark menunav">
       <Navbar.Brand href="/" className="text-white">
         <img src= {imagenes.logo} className="logomenu"></img>
 

@@ -18,3 +18,10 @@
 .navbar-toggler-icon{ 
     background-color: white !important;
 }
+
+.menunav{
+  position: fixed !important;
+  z-index: 100;
+  background-color: black;
+  width: 100%;
+}
