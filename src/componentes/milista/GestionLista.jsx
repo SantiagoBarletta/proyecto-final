@@ -4,10 +4,10 @@ import MiLista from "./MiLista";
 import './Milista.css'
 
 const GestionLista = () =>{
-// Estado para almacenar las pociones
+// Estado para almacenar las peliculas
 const [items, setItems] = useState([]);
 
-//Carga inicial de pociones desde localStorage
+//Carga inicial de peliculas desde localStorage
 useEffect(() => {
     const itemsGuardados = JSON.parse(localStorage.getItem('items'));
     if(itemsGuardados){
@@ -15,19 +15,29 @@ useEffect(() => {
     }
 }, []);
 
-//Almacena las pociones en local storage cuando cambia el estado
+//Almacena las peliculas en local storage cuando cambia el estado
 useEffect (() => {
     localStorage.setItem('items', JSON.stringify(items))
 }, [items])
 
 
 //Marcar una poción como completada o no
-const vistoItem = (id) =>{
+const vistoItem = (id) => {
     const nuevosItems = items.map((item) =>
-    item.id === id ? { ...item, vista: !item.vista }:item
-    )
+      item.id === id ? { ...item, vista: !item.vista } : item
+    );
     setItems(nuevosItems);
-}
+  };
+  
+  // Nueva función para actualizar la valoración
+  const actualizarValoracion = (id, nuevaValoracion) => {
+    const nuevosItems = items.map((item) =>
+      item.id === id ? { ...item, valoracion: nuevaValoracion } : item
+    );
+    setItems(nuevosItems);
+  };
+  
+  
 
 //Mostrar ocultar sinopsis
 const verSinopsis = (id) =>{
@@ -38,20 +48,21 @@ const verSinopsis = (id) =>{
 }
 
 
-// Eliminar pocion de la lista
+// Eliminar pelicula de la lista
 const eliminarItem = (id) =>{
     const nuevosItems = items.filter((item) => item.id !==id);
     setItems(nuevosItems)
 };
 
-//Agregar una nueva pocion a la lista
+//Agregar una nueva pelicula a la lista
 const agregarItem = ({ nombre, sinopsis }) => {
     const nuevoItem ={
         id: Date.now(), //generar ID unico
         nombre,
         sinopsis, 
         vista: false,
-        ver: false
+        ver: false,
+        valoracion: 0,
     };
     setItems([...items, nuevoItem])
 };
@@ -60,12 +71,12 @@ const agregarItem = ({ nombre, sinopsis }) => {
         <div>
             <h2> Mi Lista </h2>
             <FormularioMiLista agregarItem={agregarItem} />
-            
             <MiLista
             items={items}
             vistoItem={vistoItem}
             eliminarItem={eliminarItem}
             verSinopsis={verSinopsis}
+            actualizarValoracion={actualizarValoracion}
             />
         
         </div>

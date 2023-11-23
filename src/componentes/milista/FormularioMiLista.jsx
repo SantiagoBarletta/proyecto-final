@@ -1,36 +1,46 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const FormularioMiLista = ({ agregarItem }) => {
-  const [nuevoItem, setNuevoItem] = useState({
-    nombre: '',
-    sinopsis: ''
-  });
+  const [nombre, setNombre] = useState('');
+  const [sinopsis, setSinopsis] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nuevoItem.nombre.trim() !== '' && nuevoItem.sinopsis.trim() !== '') {
-      agregarItem(nuevoItem);
-      setNuevoItem({ nombre: '', sinopsis: '' });
+
+    // Validar que haya un nombre antes de agregar un item
+    if (nombre.trim() === '') {
+      // Puedes manejar la lógica de error o mostrar un mensaje al usuario aquí
+      return;
     }
+
+    // Llamar a la función agregarItem con los datos del nuevo item
+    agregarItem({ nombre, sinopsis });
+
+    // Limpiar los campos después de agregar el item
+    setNombre('');
+    setSinopsis('');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="input-group mb-3">
-      <input
-        type="text"
-        value={nuevoItem.nombre}
-        onChange={(e) => setNuevoItem({ ...nuevoItem, nombre: e.target.value })}
-        placeholder="Nueva Película"
-      />
-      <textarea
-        className='textareasinopsis'
-        value={nuevoItem.sinopsis}
-        onChange={(e) => setNuevoItem({ ...nuevoItem, sinopsis: e.target.value })}
-        placeholder="Sinopsis"
-      />
-      <button type="submit" className="btn btn-primary btn-sm">Agregar</button>
+    <div className="formulario">
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nombre:
+        <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+      </label>
+      <label>
+        Sinopsis:
+        <textarea value={sinopsis} onChange={(e) => setSinopsis(e.target.value)} />
+      </label>
+      <button type="submit">Agregar a la lista</button>
     </form>
+    </div>
   );
+};
+
+FormularioMiLista.propTypes = {
+  agregarItem: PropTypes.func.isRequired,
 };
 
 export default FormularioMiLista;
