@@ -19,6 +19,7 @@ function App() {
         <Header />
         
         <main>
+          
         <Routes>
           <Route path="/" element={<Seccion />} />
           <Route path="/milista" element={<GestionLista />} />
