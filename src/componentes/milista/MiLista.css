@@ -6,6 +6,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 10px;
+    margin-bottom: 150px;
+    
   }
 
 .item{
@@ -16,6 +18,7 @@
     gap :10px;
     flex-wrap: wrap;
     color: #ccc;
+    
 }
 .vista{
     text-transform: uppercase;
@@ -24,7 +27,8 @@
     width: 100%;
     padding: 15px;
     border-radius: 10px;
-    color: red
+    color: red;
+    max-height: 50px;
 }
 
 .pendiente{
@@ -35,11 +39,11 @@
     padding: 15px;
     border-radius: 10px;
     color: blueviolet;
+    max-height: 50px;
 }
 
 .sinopsis{
     width: 100%;
-    flex-wrap: wrap;
     word-wrap: break-word;
 }
 
@@ -94,6 +98,7 @@ h2{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    max-height: 50px;
   }
   
   button:hover {

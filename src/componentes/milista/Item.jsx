@@ -1,8 +1,21 @@
-import PropTypes from 'prop-types';
-import Estrellas from './Estrellas';
+import PropTypes from "prop-types";
+import Estrellas from "./Estrellas";
 
-const Item = ({ item, vistoItem, eliminarItem, verSinopsis, actualizarValoracion }) => {
-  const { id, nombre, sinopsis, vista, mostrar, valoracion: valoracionItem } = item;
+const Item = ({
+  item,
+  vistoItem,
+  eliminarItem,
+  verSinopsis,
+  actualizarValoracion,
+}) => {
+  const {
+    id,
+    nombre,
+    sinopsis,
+    vista,
+    mostrar,
+    valoracion: valoracionItem,
+  } = item;
 
   const completar = () => {
     vistoItem(id);
@@ -18,18 +31,24 @@ const Item = ({ item, vistoItem, eliminarItem, verSinopsis, actualizarValoracion
 
   return (
     <div className="item">
-      <div className={vista ? 'vista' : 'pendiente'}>{nombre}</div>
-      <div className={mostrar ? 'sinopsis' : 'sinopsis-no'}><p>{sinopsis}</p></div>
-      <button onClick={completar}>
-        {vista ? 'Pendiente' : 'Vista'}
-      </button>
-      <button onClick={eliminar}>Eliminar</button>
-      <button onClick={ver}>
-        {mostrar ? 'Ocultar Sinopsis' : 'Mostrar Sinopsis'}
-      </button>
-      <div className="valoracion">
-        <p>Valoración: </p>
-        <Estrellas valoracion={valoracionItem} onValoracionChange={(rating) => actualizarValoracion(id, rating)} /></div>
+      <div className={vista ? "vista" : "pendiente"}>{nombre}</div>
+      <div className={mostrar ? "sinopsis" : "sinopsis-no"}>
+        <p>{sinopsis}</p>
+      </div>
+      
+        <button onClick={completar}>{vista ? "Pendiente" : "Vista"}</button>
+        <button onClick={eliminar}>Eliminar</button>
+        <button onClick={ver}>
+          {mostrar ? "Ocultar Sinopsis" : "Mostrar Sinopsis"}
+        </button>
+        <div className="valoracion">
+          <p>Valoración: </p>
+          <Estrellas
+            valoracion={valoracionItem}
+            onValoracionChange={(rating) => actualizarValoracion(id, rating)}
+          />
+      
+      </div>
     </div>
   );
 };
