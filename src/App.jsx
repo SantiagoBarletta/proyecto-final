@@ -21,7 +21,7 @@ function App() {
         <main>
           
         <Routes>
-          <Route path="/" element={<Seccion />} />
+          <Route path="/proyecto-final" element={<Seccion />} />
           <Route path="/milista" element={<GestionLista />} />
           <Route path="/peliculas" element={<ListaPeliculas />} />
           <Route path="/sliderpeliculas" element={<SliderPeliculas />} />

@@ -16,7 +16,7 @@ const Menu = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <Link to="/" className="linkMenu text-white ">
+          <Link to="/proyecto-final" className="linkMenu text-white ">
             Inico
           </Link>
           <Link to="/peliculas" className="linkMenu text-white">
