@@ -1,11 +1,50 @@
-
 .carrusel{
   text-align: left !important;
-  right: 40% !important;
-  left: 10% !important
 }
-
+.carousel-indicators{
+  visibility: hidden;
+}
 .slider{
 margin-top: 100px;
 width: 100%;
+top:0
 }
+
+.carousel-caption p{
+  display: none;
+}
+/*------------------------------------------Patalla de tablets---------------------------------------------*/
+@media screen and (min-width: 576px) {
+  .carrusel{
+    text-align: left !important;
+    right: 40% !important;
+    left: 10% !important
+  }
+  
+  .slider{
+  margin-top: 100px;
+  width: 100%;
+  }
+  .carousel-caption p{
+    display:initial;
+  }
+}
+
+/* --------------------------------Pantallas de escritorio------------------------------------------------------*/
+@media (min-width: 992px) {
+  .carrusel{
+    text-align: left !important;
+    right: 40% !important;
+    left: 10% !important
+  }
+  
+  .slider{
+  margin-top: 100px;
+  width: 100%;
+  }
+
+  .carousel-indicators{
+    visibility:visible;
+  }
+}
+

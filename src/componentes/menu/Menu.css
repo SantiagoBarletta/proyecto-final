@@ -13,7 +13,7 @@
     padding-left: var(--bs-navbar-nav-link-padding-x);
 }
 .logomenu{
-  width: 150px;
+  width: 100px;
 }
 .navbar-toggler-icon{ 
     background-color: white !important;
@@ -24,4 +24,29 @@
   z-index: 100;
   background-color: black;
   width: 100%;
+  top:0;
+  left:0
 }
+
+/*------------------------------------------Patalla de tablets---------------------------------------------*/
+@media screen and (min-width: 576px) {
+  
+.logomenu{
+  width: 150px;
+}
+}
+
+/* --------------------------------Pantallas de escritorio------------------------------------------------------*/
+@media (min-width: 992px) {
+
+.navbar-toggler-icon{ 
+    background-color: white !important;
+}
+
+.menunav{
+  position: fixed !important;
+  z-index: 100;
+  background-color: black;
+  width: 100%;
+  left: 10px
+}}
