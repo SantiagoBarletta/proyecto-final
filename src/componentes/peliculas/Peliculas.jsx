@@ -22,13 +22,6 @@ function Pelicula(props) {
       </Card.Footer>
     </Card>
 
-    // <article className="pelicula">
-    //     <h2 className="tituloPelicula"> {props.nombre}</h2>
-    //     <img src={imagenes[props.imagen]} alt={props.nombre} className="poster" />
-    //     <b> Año:</b> {props.anio} <br />
-    //     <b> Director:</b> {props.director}
-    //     <p className="sinopsis"> {props.sinopsis}</p>
-    // </article>
   );
 }
 

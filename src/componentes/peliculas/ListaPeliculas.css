@@ -1,16 +1,28 @@
-  .contenidoPeliculas {
-    margin-bottom: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 5px;
+.card {
+  flex-basis: calc(100% - 10px); 
+}
+
+.contenidoPeliculas {
+  margin-bottom: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+}
+
+/* --------------------------------Pantallas de tablets------------------------------------------------------*/
+@media (min-width: 768px) {
+  .card {
+    flex-basis: calc(50% - 10px); /* Dos tarjetas por fila en pantallas más pequeñas */
+  }
+}
+
+/* --------------------------------Pantallas de escritorio------------------------------------------------------*/
+@media (min-width: 1224px) {
+  
+  .card {
+    flex-basis: calc(23% - 10px); /* Cambiado el ancho a un porcentaje menos el espacio entre las tarjetas */
+    margin-bottom: 10px; /* Espacio entre las tarjetas */
+    box-sizing: border-box; /* Añadido para incluir el padding en el ancho */
   }
 
-  .card-footer{
-    background-color:#fff !important;
-  }
-
-  .card{
-    padding: 2px;
-    width: 23% !important;
-  }
+}

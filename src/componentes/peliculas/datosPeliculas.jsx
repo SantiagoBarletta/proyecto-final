@@ -47,6 +47,22 @@ const peliculas = [
     director: "Wes Craven",
     imagen: "pesadilla", 
   },
+  {
+    nombre: "Hellraiser",
+    anio: 1987,
+    sinopsis:
+      "Frank Cotton adquiere el llamado cubo de Lamont, una especie de acertijo tridimensional que, según se dice, abre las puertas del infierno y da acceso a más de un placer sádico. Una noche Frank desentraña la apertura del mismo, pero en lugar de encontrar los placeres prometidos, encuentra dolor y tortura. El cubo abre el portal a los cenobitas, guardianes liderados por Pinhead, quienes prodigan a Frank todo tipo de suplicios y sangrientos placeres antes de morir.",
+    director: "Clive Barker",
+    imagen: "hellraiser", 
+  },
+  {
+    nombre: "Child´s Play",
+    anio: 1988,
+    sinopsis:
+      "Cuando un niño de seis años de edad asegura que su nuevo muñeco ha arrojado violentamente por la ventana a su niñera, nadie le cree. Pero una larga serie de horribles asesinatos conduce al detective que se ocupa del caso hasta el muñeco.",
+    director: "Tom Holland",
+    imagen: "chucky", 
+  },
 ];
 
 export default peliculas;
