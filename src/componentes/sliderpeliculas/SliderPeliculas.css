@@ -50,7 +50,17 @@
   width: 100%;
   height: 300px;
 }
+.plataformas ul{
+  list-style: none;
+  display: flex;
+}
 
+.plataformas li{
+  padding: 5px;
+}
+.plataformas img{
+  max-width: 80px;
+}
 /*------------------------------------------Patalla de tablets---------------------------------------------*/
 @media screen and (min-width: 576px) {
   .contenedor_imagen {

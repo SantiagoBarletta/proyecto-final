@@ -8,7 +8,7 @@ import "./SliderPeliculas.css";
 function SliderPeliculas() {
   const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [slidesToShow, setSlidesToShow] = useState(5); // Estado para almacenar la cantidad de elementos a mostrar
+  const [slidesToShow, setSlidesToShow] = useState(5);
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -35,7 +35,23 @@ function SliderPeliculas() {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        setPeliculas(data.results);
+
+        // Filtrar películas con sinopsis y trailer
+        const filteredMovies = await Promise.all(
+          data.results
+            .filter(
+              (pelicula) =>
+                pelicula.overview &&
+                pelicula.overview.trim() !== "" &&
+                hasTrailer(pelicula.id)
+            )
+            .map(async (pelicula) => ({
+              ...pelicula,
+              trailerKey: await getTrailerKey(pelicula.id),
+            }))
+        );
+
+        setPeliculas(filteredMovies);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -43,24 +59,42 @@ function SliderPeliculas() {
       }
     };
 
+    const hasTrailer = async (movieId) => {
+      const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=dd00aa6b89a4eaf22b5fbf601827b192&language=es-ES`;
+      const trailerResponse = await fetch(trailerUrl);
+      const trailerData = await trailerResponse.json();
+
+      return trailerData.results.some((video) => video.type === "Trailer");
+    };
+
+    const getTrailerKey = async (movieId) => {
+      const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=dd00aa6b89a4eaf22b5fbf601827b192&language=es-ES`;
+      const trailerResponse = await fetch(trailerUrl);
+      const trailerData = await trailerResponse.json();
+
+      const trailer = trailerData.results.find(
+        (video) => video.type === "Trailer"
+      );
+
+      return trailer ? trailer.key : null;
+    };
+
     fetchGenres();
   }, []);
+
   useEffect(() => {
-    // Ajustar la cantidad de elementos a mostrar al cargar la página
     setSlidesToShow(cantidadMuestraDesplaza());
 
-    // Ajustar la cantidad de elementos a mostrar al cambiar el tamaño de la pantalla
     const handleResize = () => {
       setSlidesToShow(cantidadMuestraDesplaza());
     };
 
     window.addEventListener("resize", handleResize);
 
-    // Limpiar el evento de escucha al desmontar el componente
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // El segundo argumento [] asegura que este useEffect solo se ejecute una vez al cargar el componente
+  }, []);
 
   const cantidadMuestraDesplaza = () => {
     if (window.innerWidth <= 768) {
@@ -78,11 +112,12 @@ function SliderPeliculas() {
     }
     return text || "Sinopsis no disponible";
   };
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: slidesToShow, // Usar el estado actualizado
+    slidesToShow: slidesToShow,
     slidesToScroll: slidesToShow,
   };
 
@@ -108,6 +143,20 @@ function SliderPeliculas() {
                   <h3>{pelicula.original_title}</h3>
                   <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
                   <p>Puntaje IMDB: {pelicula.vote_average}</p>
+                  {pelicula.trailerKey && (
+                    <div className="trailer">
+                      <p>Trailer:</p>
+                      <iframe
+                        width="800"
+                        height="600"
+                        src={`https://www.youtube.com/embed/${pelicula.trailerKey}`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
