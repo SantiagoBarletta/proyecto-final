@@ -49,9 +49,26 @@ function SliderPeliculas() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Puedes ajustar la cantidad de elementos mostrados en un momento dado
-    slidesToScroll: 5,
   };
+
+  // Ajustamos slidesToShow según el tamaño de la pantalla
+  const cantidadMuestraDesplaza = () => {
+    if (window.innerWidth <= 768) {
+      return 1;
+    } else if (window.innerWidth <= 992) {
+      return 3;
+    } else {
+      return 5;
+    }
+  };
+
+  settings.slidesToShow = cantidadMuestraDesplaza();
+  settings.slidesToScroll= cantidadMuestraDesplaza();
+
+  // Volvemos a ajustar slidesToShow al cambiar el tamaño de la pantalla
+  window.addEventListener("resize", () => {
+    settings.slidesToShow = cantidadMuestraDesplaza();
+  });
 
   const truncateText = (text, maxLength) => {
     if (text && text.length > maxLength) {
@@ -73,9 +90,10 @@ function SliderPeliculas() {
                 <div className="contenedor_imagen">
                   <Link to={`/DetallePeliculaSlider/${pelicula.id}`}>
                     <img
-                    src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
-                    alt={pelicula.original_title}
-                  /></Link>
+                      src={`https://image.tmdb.org/t/p/w500/${pelicula.poster_path}`}
+                      alt={pelicula.original_title}
+                    />
+                  </Link>
                 </div>
                 <div className="detalleslider">
                   <h3>{pelicula.original_title}</h3>
