@@ -143,20 +143,7 @@ function SliderPeliculas() {
                   <h3>{pelicula.original_title}</h3>
                   <p>Resumen: {truncateText(pelicula.overview, 150)}</p>
                   <p>Puntaje IMDB: {pelicula.vote_average}</p>
-                  {pelicula.trailerKey && (
-                    <div className="trailer">
-                      <p>Trailer:</p>
-                      <iframe
-                        width="800"
-                        height="600"
-                        src={`https://www.youtube.com/embed/${pelicula.trailerKey}`}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  )}
+                  
                 </div>
               </div>
             ))}
