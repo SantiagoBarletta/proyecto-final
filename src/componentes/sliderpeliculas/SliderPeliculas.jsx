@@ -8,6 +8,7 @@ import "./SliderPeliculas.css";
 function SliderPeliculas() {
   const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [slidesToShow, setSlidesToShow] = useState(5); // Estado para almacenar la cantidad de elementos a mostrar
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -44,14 +45,23 @@ function SliderPeliculas() {
 
     fetchGenres();
   }, []);
+  useEffect(() => {
+    // Ajustar la cantidad de elementos a mostrar al cargar la página
+    setSlidesToShow(cantidadMuestraDesplaza());
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-  };
+    // Ajustar la cantidad de elementos a mostrar al cambiar el tamaño de la pantalla
+    const handleResize = () => {
+      setSlidesToShow(cantidadMuestraDesplaza());
+    };
 
-  // Ajustamos slidesToShow según el tamaño de la pantalla
+    window.addEventListener("resize", handleResize);
+
+    // Limpiar el evento de escucha al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // El segundo argumento [] asegura que este useEffect solo se ejecute una vez al cargar el componente
+
   const cantidadMuestraDesplaza = () => {
     if (window.innerWidth <= 768) {
       return 1;
@@ -62,19 +72,18 @@ function SliderPeliculas() {
     }
   };
 
-  settings.slidesToShow = cantidadMuestraDesplaza();
-  settings.slidesToScroll= cantidadMuestraDesplaza();
-
-  // Volvemos a ajustar slidesToShow al cambiar el tamaño de la pantalla
-  window.addEventListener("resize", () => {
-    settings.slidesToShow = cantidadMuestraDesplaza();
-  });
-
   const truncateText = (text, maxLength) => {
     if (text && text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
     return text || "Sinopsis no disponible";
+  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: slidesToShow, // Usar el estado actualizado
+    slidesToScroll: slidesToShow,
   };
 
   return (
