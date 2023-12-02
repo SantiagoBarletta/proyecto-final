@@ -24,12 +24,12 @@ const peliculas = [
     imagen: "livingdead", 
   },
   {
-    nombre: "Halloween",
-    anio: 1978,
+    nombre: "Child´s Play",
+    anio: 1988,
     sinopsis:
-      "El pequeño Michael Myers asesina a su hermana en la noche de Halloween de 1963, por lo que es internado en un psiquiátrico. Seis años más tarde, Myers se escapa del hospital y regresa a su pueblo natal, Haddonfield, en Illinois. El psicópata dará comienzo a una serie de horripilantes asesinatos mientras uno de los médicos que lo trataba en el hospital le sigue la pista.",
-    director: "John Carpenter",
-    imagen: "halloween", 
+      "Cuando un niño de seis años de edad asegura que su nuevo muñeco ha arrojado violentamente por la ventana a su niñera, nadie le cree. Pero una larga serie de horribles asesinatos conduce al detective que se ocupa del caso hasta el muñeco.",
+    director: "Tom Holland",
+    imagen: "chucky", 
   },
   {
     nombre: "Tiburón",
@@ -56,12 +56,12 @@ const peliculas = [
     imagen: "hellraiser", 
   },
   {
-    nombre: "Child´s Play",
-    anio: 1988,
+    nombre: "Halloween",
+    anio: 1978,
     sinopsis:
-      "Cuando un niño de seis años de edad asegura que su nuevo muñeco ha arrojado violentamente por la ventana a su niñera, nadie le cree. Pero una larga serie de horribles asesinatos conduce al detective que se ocupa del caso hasta el muñeco.",
-    director: "Tom Holland",
-    imagen: "chucky", 
+      "El pequeño Michael Myers asesina a su hermana en la noche de Halloween de 1963, por lo que es internado en un psiquiátrico. Seis años más tarde, Myers se escapa del hospital y regresa a su pueblo natal, Haddonfield, en Illinois. El psicópata dará comienzo a una serie de horripilantes asesinatos mientras uno de los médicos que lo trataba en el hospital le sigue la pista.",
+    director: "John Carpenter",
+    imagen: "halloween", 
   },
 ];
 

@@ -1,67 +1,85 @@
 /*CSS DEL CONTENIDO*/
 
 .contenidoMiLista {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 10px;
-    margin-bottom: 150px;
-    
-  }
-
-.item{
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 25rem;
-    display:flex;
-    gap :10px;
-    flex-wrap: wrap;
-    color: #ccc;
-    
-}
-.vista{
-    text-transform: uppercase;
-    background-color: bisque;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    color: red;
-    max-height: 50px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 150px;
 }
 
-.pendiente{
-    text-transform: uppercase;
-    background-color:greenyellow;
-    width: 100%;
-    flex-wrap: wrap;
-    padding: 15px;
-    border-radius: 10px;
-    color: blueviolet;
-    max-height: 50px;
+.item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 25rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #ccc;
+  position: relative; /* Agregamos posición relativa para posicionar los pseudo-elementos */
 }
 
-.sinopsis{
-    width: 100%;
-    word-wrap: break-word;
+.vista::before {
+  content: '\2705'; /* Código unicode para el símbolo check */
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.sinopsis-no{
-    visibility: collapse;
-    ;
-}
-h2{
-    color: white !important;
+.pendiente::before {
+  content: '\231B'; /* Código unicode para el símbolo de reloj */
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.valoracion{
+.vista {
+  text-transform: uppercase;
+  background-color: rgb(132, 219, 97);
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  font-weight: 700;
+  max-height: 50px;
+}
+
+.pendiente {
+  text-transform: uppercase;
+  background-color: #9B9B9B;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  font-weight: 700;
+  max-height: 50px;
+}
+
+.sinopsis {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.sinopsis-no {
+  visibility: collapse;
+}
+
+h2 {
+  color: white !important;
+}
+
+.valoracion {
   display: flex;
   flex-direction: row;
   justify-content: end;
   width: 100%;
-
 }
+
 
 /* CSS DEL FORMULARIO*/
 .formulario {

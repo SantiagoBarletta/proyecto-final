@@ -20,7 +20,7 @@
 @media (min-width: 1224px) {
   
   .card {
-    flex-basis: calc(23% - 10px); /* Cambiado el ancho a un porcentaje menos el espacio entre las tarjetas */
+    flex-basis: calc(25% - 10px); /* Cambiado el ancho a un porcentaje menos el espacio entre las tarjetas */
     margin-bottom: 10px; /* Espacio entre las tarjetas */
     box-sizing: border-box; /* Añadido para incluir el padding en el ancho */
   }
