@@ -10,10 +10,11 @@ const [items, setItems] = useState([]);
 //Carga inicial de peliculas desde localStorage
 useEffect(() => {
     const itemsGuardados = JSON.parse(localStorage.getItem('items'));
-    if(itemsGuardados){
-        setItems(itemsGuardados)
+    if (itemsGuardados) {
+      setItems(itemsGuardados);
     }
-}, []);
+  }, []);
+  
 
 //Almacena las peliculas en local storage cuando cambia el estado
 useEffect (() => {
@@ -21,7 +22,7 @@ useEffect (() => {
 }, [items])
 
 
-//Marcar una poción como completada o no
+//Marcar una pelicula como vista o no
 const vistoItem = (id) => {
     const nuevosItems = items.map((item) =>
       item.id === id ? { ...item, vista: !item.vista } : item
@@ -38,7 +39,6 @@ const vistoItem = (id) => {
   };
   
   
-
 //Mostrar ocultar sinopsis
 const verSinopsis = (id) =>{
     const nuevosItems = items.map((item) =>
