@@ -32,15 +32,12 @@ const Item = ({
   return (
     <div className="item">
       <div className={vista ? "vista" : "pendiente"}>{nombre}</div>
-      <div className={mostrar ? "sinopsis" : "sinopsis-no"}>
-        <p>{sinopsis}</p>
-      </div>
+      <div className={mostrar ? "sinopsis" : "sinopsis-no"}><p>{sinopsis}</p></div>
       
-        <button onClick={completar}>{vista ? "Pendiente" : "Vista"}</button>
+        
         <button onClick={eliminar}>Eliminar</button>
-        <button onClick={ver}>
-          {mostrar ? "Ocultar Sinopsis" : "Mostrar Sinopsis"}
-        </button>
+        <button onClick={ver}>{mostrar ? "Ocultar Sinopsis" : "Mostrar Sinopsis"}</button>
+        <button onClick={completar}>{vista ? <i class="bi bi-hourglass"></i> : <i class="bi bi-check-circle"></i>}</button>
         <div className="valoracion">
           <p>Valoración: </p>
           <Estrellas

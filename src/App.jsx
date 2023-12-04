@@ -17,11 +17,10 @@ function App() {
     <Router>
       <><Menu />
         <Header />
-        
         <main>
-          
-        <Routes>
+          <Routes>
           <Route path="/proyecto-final" element={<Seccion />} />
+          <Route path="/" element={<Seccion />} />
           <Route path="/milista" element={<GestionLista />} />
           <Route path="/peliculas" element={<ListaPeliculas />} />
           <Route path="/sliderpeliculas" element={<SliderPeliculas />} />

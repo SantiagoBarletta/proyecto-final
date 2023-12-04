@@ -3,7 +3,7 @@
 }
 
 .contenidoPeliculas {
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; 
