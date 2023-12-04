@@ -40,6 +40,7 @@ const vistoItem = (id) => {
   
   
 //Mostrar ocultar sinopsis
+
 const verSinopsis = (id) =>{
     const nuevosItems = items.map((item) =>
     item.id === id ? { ...item, mostrar: !item.mostrar }:item
