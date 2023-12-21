@@ -8,7 +8,7 @@ import Menu from "./componentes/menu/Menu";
 import GestionLista from "./componentes/milista/GestionLista";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DetallePeliculaSlider from "./componentes/sliderpeliculas/DetallePeliculaSlider.jsx";
-import SliderPeliculas from "./componentes/sliderpeliculas/SliderPeliculas.jsx";
+import SliderPeliculas from "./componentes/sliderpeliculas/Sliderpeliculas.jsx";
 
 
 function App() {
